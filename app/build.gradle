@@ -9,7 +9,9 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
-
+    buildFeatures {
+        dataBinding true
+    }
     defaultConfig {
         applicationId "com.example.sunflower_clone"
         minSdkVersion 16
