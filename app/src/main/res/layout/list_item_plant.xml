@@ -12,4 +12,29 @@
             type="com.example.sunflower_clone.data.Plant" />
     </data>
 
+    <com.example.sunflower_clone.views.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        android:layout_marginBottom="@dimen/card_bottom_margin"
+        android:onClick="@{clickListener}"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Sunflower.Card">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/plant_item_image"
+                android:layout_width="0dp"
+                android:layout_height="95dp"
+                android:contentDescription="@string/a11y_plant_item_image"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{plant.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.example.sunflower_clone.views.MaskedCardView>
 </layout>
