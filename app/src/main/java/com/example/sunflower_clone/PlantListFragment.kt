@@ -16,6 +16,8 @@ class PlantListFragment : Fragment() {
         val adapter = PlantAdapter()
         binding.plantList.adapter = adapter
         subscribeUi(adapter)
+
+
         return binding.root
     }
 
