@@ -1,10 +1,13 @@
 package com.example.sunflower_clone.viewmodels
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.example.sunflower_clone.data.Plant
 import com.example.sunflower_clone.data.PlantRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.flatMapLatest
 import javax.inject.Inject
 
 @HiltViewModel
@@ -15,6 +18,16 @@ class PlantListViewModel @Inject internal constructor(
 
     private val growZone: MutableStateFlow<Int> = MutableStateFlow(savedStateHandle.get(GROW_ZONE_SAVED_STATE_KEY) ?: NO_GROW_ZONE)
 
+
+    fun setGrowZoneNumber(num: Int) {
+        growZone.value = num
+    }
+
+    fun clearGrowZoneNumber() {
+        growZone.value = NO_GROW_ZONE
+    }
+
+    fun isFiltered() = growZone.value != NO_GROW_ZONE
 
     companion object {
         private const val NO_GROW_ZONE = -1
