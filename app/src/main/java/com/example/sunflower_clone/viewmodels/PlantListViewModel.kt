@@ -29,10 +29,10 @@ class PlantListViewModel @Inject internal constructor(
 
     init {
         viewModelScope.launch {
-            growZone.onEach { newGrowZone ->
+            growZone.collect { newGrowZone ->
                 savedStateHandle.set(GROW_ZONE_SAVED_STATE_KEY, newGrowZone)
             }
-        }.collect()
+        }
     }
 
     fun setGrowZoneNumber(num: Int) {
