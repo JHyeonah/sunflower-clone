@@ -13,6 +13,7 @@ import com.example.sunflower_clone.workers.SeedDatabaseWorker
 @Database(entities = [Plant::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun plantDao(): PlantDao
+    abstract fun gardenPlantingDao(): GardenPlantingDao
 
     companion object {
         @Volatile private var instance: AppDatabase? = null
