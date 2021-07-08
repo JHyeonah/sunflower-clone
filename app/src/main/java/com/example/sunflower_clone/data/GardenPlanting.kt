@@ -4,7 +4,7 @@ import androidx.room.*
 import java.util.*
 
 @Entity(
-    tableName = "graden_plantings",
+    tableName = "garden_plantings",
     foreignKeys = [
         ForeignKey(entity = Plant::class, parentColumns = ["id"], childColumns = ["plant_id"])
     ],
