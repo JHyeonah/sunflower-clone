@@ -5,7 +5,9 @@
             <variable
                 name="clickListener"
                 type="android.view.View.OnClickListener" />
-
+            <variable
+                name="viewModel"
+                type="com.example.sunflower_clone.viewmodels.PlantAndGardenPlantingsViewModel" />
         </data>
 
     <com.example.sunflower_clone.views.MaskedCardView
