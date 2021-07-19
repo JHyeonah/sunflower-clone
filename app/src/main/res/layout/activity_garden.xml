@@ -7,5 +7,6 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:defaultNavHost="true"
-        android:name="androidx.navigation.fragment.NavHostFragment"/>
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/nav_garden"/>
 </layout>
