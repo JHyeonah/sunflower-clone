@@ -10,6 +10,9 @@
         <variable
             name="viewModel"
             type="com.example.sunflower_clone.viewmodels.PlantDetailViewModel" />
+        <variable
+            name="callback"
+            type="com.example.sunflower_clone.PlantDetailFragment.Callback" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -132,7 +135,8 @@
                     android:src="@drawable/ic_photo_library"
                     app:isGone="@{!viewModel.hasValidUnsplashKey()}"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/plant_detail_name"/>
+                    app:layout_constraintTop_toBottomOf="@id/plant_detail_name"
+                    android:layout_marginRight="@dimen/margin_small" />
 
                 <TextView
                     android:id="@+id/plant_description"
@@ -154,15 +158,18 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_normal"
             android:tint="@android:color/white"
+            android:onClick="@{() -> callback.add(viewModel.plant)}"
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|end"
             app:isFabGone="@{viewModel.isPlanted}"
-            app:srcCompat="@drawable/ic_plus"/>
+            app:shapeAppearance="@style/ShapeAppearance.Sunflower.FAB"
+            app:srcCompat="@drawable/ic_plus"
+            tools:ignore="VectorDrawableCompat" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
