@@ -17,7 +17,7 @@ class PlantListFragment : Fragment() {
     private val viewModel: PlantListViewModel by viewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentPlantListBinding.inflate(inflater, container, false)
-        val context = context ?: return binding.root
+        context ?: return binding.root
 
         val adapter = PlantAdapter()
         binding.plantList.adapter = adapter

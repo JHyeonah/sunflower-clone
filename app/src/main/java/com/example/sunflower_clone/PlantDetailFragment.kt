@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.sunflower_clone.data.Plant
 import com.example.sunflower_clone.databinding.FragmentPlantDetailBinding
 import com.example.sunflower_clone.viewmodels.PlantDetailViewModel
@@ -77,7 +78,8 @@ class PlantDetailFragment : Fragment() {
 
     private fun navigateToGallery() {
         plantDetailViewModel.plant.value?.let { plant ->
-
+            val direction = PlantDetailFragmentDirections.actionPlantDetailFragmentToGalleryFragment(plant.name)
+            findNavController().navigate(direction)
         }
     }
 
