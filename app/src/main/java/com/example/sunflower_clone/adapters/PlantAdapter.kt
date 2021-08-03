@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sunflower_clone.HomeViewPagerFragmentDirections
 import com.example.sunflower_clone.data.Plant
 import com.example.sunflower_clone.databinding.ListItemPlantBinding
 
@@ -32,7 +34,8 @@ class PlantAdapter : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCallba
         }
 
         private fun navigateToPlant(plant: Plant, view: View) {
-
+            val direction = HomeViewPagerFragmentDirections.actionViewPagerFragmentToPlantDetailFragment(plant.plantId)
+            view.findNavController().navigate(direction)
         }
 
         fun bind(item: Plant) {

@@ -36,7 +36,7 @@ class PlantDetailFragment : Fragment() {
                 }
             }
 
-            galleryNav.setOnClickListener {  }
+            galleryNav.setOnClickListener { navigateToGallery() }
 
             var isToolbarShown = false
 
