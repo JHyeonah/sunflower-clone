@@ -37,7 +37,9 @@
 
     <fragment
         android:id="@+id/gallery_fragment"
-        android:label="@string/plant_details_title">
+        android:name="com.example.sunflower_clone.GalleryFragment"
+        android:label="@string/plant_details_title"
+        tools:layout="@layout/fragment_gallery">
         <argument
             android:name="plantName"
             app:argType="string"/>
